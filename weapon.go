@@ -1,4 +1,3 @@
-
 package mech
 
 // A specific weapon.
@@ -6,10 +5,13 @@ type Weapon struct {
 	Range, Damage int
 }
 
+// Interface used by objects that can be hit and take damage
+type Target interface {
+	hit(int)
+}
 
-
-// Used by a mech to fire at another mech.  Requires the range to the opposing mech
-// and the mech that is being targeted.
+// Used by an object to fire at a Target.  Requires the range to the Target
+// and the Target.
 func (weapon Weapon) Fire(rangeToTarget int, target Target) {
 	if rangeToTarget <= weapon.Range {
 		target.hit(weapon.Damage)

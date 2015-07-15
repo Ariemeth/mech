@@ -2,27 +2,45 @@ package mech
 
 import "testing"
 
-func TestMech(t *testing.T) {
-	weapon1 := Weapon{2, 2}
-	weapon2 := Weapon{1, 4}
+var testWeapon1 Weapon = Weapon{2,2}
+var testWeapon2 Weapon = Weapon{1,4}
 
-	mech1 := NewMech(weapon1, "testMech1")
+func TestNewMech(t *testing.T) {
+	mech1 := NewMech(testWeapon1, "testMech1")
 	if mech1 == nil {
 		t.Errorf("mech1 was unable to be created")
 	}
 
-	mech2 := NewMech(weapon2, "testMech2")
+	mech2 := NewMech(testWeapon2, "testMech2")
 	if mech2 == nil {
 		t.Errorf("mech2 was unable to be created")
-	}
+	}	
 }
 
-func TestWeapon(t *testing.T) {
-	weapon1 := Weapon{2, 2}
-	if weapon1.Damage != 2 {
-		t.Errorf("weapon1 damage is %i instead of 2", weapon1.Damage)
+func TestHit(t *testing.T) {
+	mech1 := NewMech(testWeapon1, "testMech1")
+	if mech1 == nil{
+		t.Errorf("mech1 was unable to be created")
 	}
-	if weapon1.Range != 2 {
-		t.Errorf("weapon1 range is %i instead of 2", weapon1.Range)
+	
+	mech1.hit(0)
+	if mech1.structure != 2 {
+		t.Errorf("mech1 took damage when it was hit with 0")
 	}
+	
+	mech1.hit(2)
+	if mech1.structure != 0 {
+		t.Errorf("mech1 was not destroyed by taking 2 damage")
+	}	
 }
+
+func TestAddWeapon(t *testing.T) {
+	
+}
+
+
+func TestMechFire(t *testing.T) {
+	
+}
+
+

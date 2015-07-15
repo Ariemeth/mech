@@ -2,7 +2,17 @@ package mech
 
 import "testing"
 
-func TestMechFire(t *testing.T) {
+func TestWeapon(t *testing.T) {
+	weapon1 := Weapon{2, 2}
+	if weapon1.Damage != 2 {
+		t.Errorf("weapon1 damage is %i instead of 2", weapon1.Damage)
+	}
+	if weapon1.Range != 2 {
+		t.Errorf("weapon1 range is %i instead of 2", weapon1.Range)
+	}
+}
+
+func TestWeaponFire(t *testing.T) {
 	weapon1 := Weapon{2, 2}
 	weapon2 := Weapon{1, 4}
 

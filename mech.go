@@ -12,10 +12,6 @@ type Mech struct {
 	Name      string
 }
 
-type Target interface {
-	hit(int)
-}
-
 // NewMech is used to create a new instance of a mech with default structure.
 func NewMech(weapon Weapon, name string) *Mech {
 	return &Mech{2, weapon, name}
@@ -28,4 +24,14 @@ func (mech *Mech) hit(damage int) {
 	if mech.structure <= 0 {
 		fmt.Println(mech.Name, "destroyed")
 	}
+}
+
+// Add a Weapon to the mech
+func (mech *Mech) AddWeapon(weapon Weapon) {
+
+}
+
+// Tell the Mech to fire at a Target
+func (mech *Mech) Fire(target Target) {
+	
 }
