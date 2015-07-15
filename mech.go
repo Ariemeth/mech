@@ -18,7 +18,7 @@ func NewMech(weapon Weapon, name string) *mech {
 	newMech.structure = 2
 	newMech.weapons = weapon
 	newMech.name = name
-	
+
 	return newMech
 }
 
@@ -38,5 +38,5 @@ func (mech *mech) AddWeapon(weapon Weapon) {
 
 // Tell the Mech to fire at a Target
 func (mech *mech) Fire(target Target) {
-	
+
 }
