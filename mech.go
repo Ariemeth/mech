@@ -8,16 +8,16 @@ import (
 // Mech is a basic mech type
 type mech struct {
 	structure int
-	Weapons   Weapon
-	Name      string
+	weapons   Weapon
+	name      string
 }
 
 // NewMech is used to create a new instance of a mech with default structure.
 func NewMech(weapon Weapon, name string) *mech {
 	newMech := new(mech)
 	newMech.structure = 2
-	newMech.Weapons = weapon
-	newMech.Name = name
+	newMech.weapons = weapon
+	newMech.name = name
 	
 	return newMech
 }
@@ -25,9 +25,9 @@ func NewMech(weapon Weapon, name string) *mech {
 // internal call when a mech is hit
 func (mech *mech) hit(damage int) {
 	mech.structure -= damage
-	fmt.Println(mech.Name, "takes", damage, "damage")
+	fmt.Println(mech.name, "takes", damage, "damage")
 	if mech.structure <= 0 {
-		fmt.Println(mech.Name, "destroyed")
+		fmt.Println(mech.name, "destroyed")
 	}
 }
 
