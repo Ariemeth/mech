@@ -2,23 +2,29 @@ package mech
 
 import "testing"
 
-var testWeapon1 Weapon = Weapon{Damage:2, Range:2}
-var testWeapon2 Weapon = Weapon{Damage:1, Range:4}
+
 
 func TestNewMech(t *testing.T) {
-	mech1 := NewMech(testWeapon1, "testMech1")
+	
+	weapon1 := Weapon{Damage:2, Range:2}
+	weapon2 := Weapon{Damage:1, Range:4}
+	
+	mech1 := NewMech(weapon1, "testMech1")
 	if mech1 == nil {
 		t.Errorf("mech1 was unable to be created")
 	}
 
-	mech2 := NewMech(testWeapon2, "testMech2")
+	mech2 := NewMech(weapon2, "testMech2")
 	if mech2 == nil {
 		t.Errorf("mech2 was unable to be created")
 	}	
 }
 
 func TestHit(t *testing.T) {
-	mech1 := NewMech(testWeapon1, "testMech1")
+	
+	weapon1 := Weapon{Damage:2, Range:2}
+	
+	mech1 := NewMech(weapon1, "testMech1")
 	if mech1 == nil{
 		t.Errorf("mech1 was unable to be created")
 	}
