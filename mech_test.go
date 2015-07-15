@@ -2,8 +2,8 @@ package mech
 
 import "testing"
 
-var testWeapon1 Weapon = Weapon{2,2}
-var testWeapon2 Weapon = Weapon{1,4}
+var testWeapon1 Weapon = Weapon{Damage:2, Range:2}
+var testWeapon2 Weapon = Weapon{Damage:1, Range:4}
 
 func TestNewMech(t *testing.T) {
 	mech1 := NewMech(testWeapon1, "testMech1")

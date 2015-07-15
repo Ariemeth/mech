@@ -3,7 +3,7 @@ package mech
 import "testing"
 
 func TestWeapon(t *testing.T) {
-	weapon1 := Weapon{2, 2}
+	weapon1 := Weapon{Damage:2, Range:2}
 	if weapon1.Damage != 2 {
 		t.Errorf("weapon1 damage is %i instead of 2", weapon1.Damage)
 	}
@@ -13,8 +13,8 @@ func TestWeapon(t *testing.T) {
 }
 
 func TestWeaponFire(t *testing.T) {
-	weapon1 := Weapon{2, 2}
-	weapon2 := Weapon{1, 4}
+	weapon1 := Weapon{Damage:2, Range:2}
+	weapon2 := Weapon{Damage:1, Range:4}
 
 	mech1 := NewMech(weapon1, "testMech1")
 	if mech1 == nil {
